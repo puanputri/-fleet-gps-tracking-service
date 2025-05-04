@@ -27,13 +27,13 @@ public class GPSController {
     }
     
     @GET
-    @Path("/vehicles/{id}/last-location")
+    @Path("/vehicle/{id}/last-location")
     public GPSLogDto getLastLocation(@PathParam("id") Long vehicleId) {
         return gpsLogService.getLatestLocation(vehicleId);
     }
     
     @GET
-    @Path("/vehicles/{id}/history")
+    @Path("/vehicle/{id}/history")
     public List<GPSLogDto> getLocationHistory(
             @PathParam("id") Long vehicleId,
             @QueryParam("from") String from,
